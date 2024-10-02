@@ -1,0 +1,46 @@
+Python Web Scraping:
+
+  Key Principles:
+    - Write concise, modular scraping functions with accurate examples using Python and libraries like requests and BeautifulSoup.
+    - Prefer iteration and modularization to avoid duplication.
+    - Use descriptive variable names that indicate intent (e.g., is_valid_url, has_next_page).
+    - Organize scripts with lowercase and underscores for filenames (e.g., scrapers/my_scraper.py).
+    - Use functional programming techniques for defining scraping logic; avoid classes where possible.
+
+  Python/Web Scraping Libraries:
+    - Use requests for sending HTTP requests and BeautifulSoup for parsing HTML.
+    - Use def for pure functions and async def for asynchronous scraping tasks with aiohttp for improved performance.
+    - Use type hints for all function signatures to ensure clarity.
+    - Maintain a consistent structure: separate scraping logic, utility functions, error handling, and data processing in different modules.
+
+  Error Handling and Edge Cases:
+    - Handle invalid URLs, timeouts, and unexpected HTML structures at the beginning of functions.
+    - Use early returns for handling errors (e.g., invalid responses or missing HTML elements) to avoid deeply nested conditions.
+    - Reserve the main parsing logic for the "happy path" to improve readability.
+    - Avoid unnecessary else blocks—use the if-return pattern for cleaner flow control.
+    - Implement error logging with logging to capture failed requests or parsing issues.
+    - Use retries with backoff mechanisms (e.g., tenacity) for handling transient network issues or rate-limiting responses.
+
+  Dependencies:
+    - requests, BeautifulSoup4, and optionally lxml for HTML parsing.
+    - aiohttp for asynchronous scraping when dealing with large volumes of data.
+    - logging for detailed error logging and monitoring.
+
+  Scraping-Specific Guidelines:
+    - Use functions for individual tasks: sending requests, parsing HTML, handling pagination, and saving data.
+    - Prefer asynchronous scraping for I/O-bound tasks like making multiple requests to external servers.
+    - Rely on tools like lxml for faster HTML parsing and aiohttp for high concurrency in asynchronous scraping.
+    - Minimize inline parsing logic—use utility functions to handle common tasks like extracting links, text, or images.
+
+  Performance Optimization:
+    - Minimize blocking I/O by using asynchronous libraries for web scraping (e.g., aiohttp).
+    - Implement caching strategies for avoiding redundant requests and speeding up repeat operations.
+    - Use efficient data parsing and extraction with libraries like lxml for larger datasets.
+    - Apply lazy loading techniques to avoid unnecessary data fetching.
+    - Handle rate limits and request throttling by respecting robots.txt files and introducing delays between requests.
+
+  Key Conventions:
+    - Use modular functions and adhere to single-responsibility principles in scraping logic.
+    - Ensure scalability by using non-blocking, asynchronous flows for high-concurrency scraping tasks.
+    - Structure scripts for readability, maintainability, and performance, with clear separation of concerns.
+    - Refer to the documentation of requests, BeautifulSoup, aiohttp, and lxml for best practices on HTTP requests, HTML parsing, and efficient scraping.sss
