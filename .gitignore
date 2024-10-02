@@ -1,12 +1,15 @@
 # Ignore environment variables file
 .env
 
-# Ignore service account JSON file
-*.json
+# Ignore .DS_Store files (macOS specific)
+.DS_Store
 
-# Ignore Python bytecode
+# Ignore service account JSON file
+bluechip-ph-*.json
+
+# Ignore Python bytecode files
 __pycache__/
-*.py[cod]
+*.pyc
 
 # Ignore virtual environment
 venv/
