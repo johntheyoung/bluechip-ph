@@ -72,8 +72,8 @@ def upload_to_google_sheets(data):
     # Open the Google Sheet by its name
     spreadsheet = client.open(GOOGLE_SHEET_NAME)
 
-    # Select the first sheet (or specify the sheet by name)
-    worksheet = spreadsheet.sheet1
+    # Select the "Daily Data" sheet
+    worksheet = spreadsheet.worksheet("Daily Data")
 
     # Get the current data in the sheet
     existing_data = worksheet.get_all_values()
@@ -85,7 +85,7 @@ def upload_to_google_sheets(data):
     # Append the new data, skipping the header row
     worksheet.append_rows(data[1:])
 
-    print("Data appended successfully.")
+    print("Data appended successfully to the 'Daily Data' sheet.")
 
 # Main execution
 if __name__ == "__main__":
