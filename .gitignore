@@ -1,0 +1,12 @@
+# Ignore environment variables file
+.env
+
+# Ignore service account JSON file
+*.json
+
+# Ignore Python bytecode
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environment
+venv/
